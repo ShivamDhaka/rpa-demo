@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Style for the chatbot container */
+    .chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="chatbot-container">
+    <!-- Input field and submit button -->
+    <input type="text" id="chat-input" placeholder="Type your message...">
+    <button id="chat-submit">Send</button>
+  </div>
+
+  <!-- Add your content here, such as a chat conversation -->
+
+  <script>
+    const inputField = document.getElementById('chat-input');
+    const submitButton = document.getElementById('chat-submit');
+
+    // Add event listener to submit button
+    submitButton.addEventListener('click', function() {
+      // Process the input (e.g., send a message)
+      inputField.value = ''; // Clear the input field
+      // Focus on a different element to hide the virtual keyboard
+      document.body.focus();
+    });
+
+    // Add event listener to input field
+    inputField.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        console.log("Enter key is pressed");
+        // Process the input (e.g., send a message)
+        inputField.value = ''; // Clear the input field
+        // Focus on a different element to hide the virtual keyboard
+        document.body.focus();
+      }
+    });
+  </script>
+</body>
+</html>
